@@ -1,52 +1,36 @@
 
-describe('shout(string)', function() {
-  it('receives one argument and returns it in all caps', function() {
-    expect(shout('hello')).toEqual('HELLO');
-  })
-})
+function shout(string) {
 
-describe('whisper(string)', function() {
-  it('receives one argument and returns it in all lowercase', function() {
-    expect(whisper('HELLO')).toEqual('hello');
-  })
-})
+  return string.toUpperCase();
 
-describe('logShout(string)', function() {
-  it('takes a string argument and logs it in all caps using console.log()', function() {
-    const spy = expect.spyOn(console, 'log').andCallThrough();
+}
 
-    logShout('hello');
+function whisper(string){
+  return string .toLowerCase();
+}
 
-    expect(spy).toHaveBeenCalledWith('HELLO');
+function logShout(string){
 
-    console.log.restore();
-  })
-})
+  console.log (string.toUpperCase());
 
-describe('logWhisper(string)', function() {
-  it('takes a string argument and logs it in all lowercase using console.log()', function() {
-    const spy = expect.spyOn(console, 'log').andCallThrough();
+}
+function logWhisper(string){
 
-    logWhisper('HELLO');
+  console.log (string.toLowerCase());
 
-    expect(spy).toHaveBeenCalledWith('hello');
+}
 
-    console.log.restore();
-  })
-})
+function sayHiToHeadphonedRoommate(string){
 
-describe('sayHiToHeadphonedRoommate(string)', function() {
-  it('returns "I can\'t hear you!" if `string` is lowercase', function() {
-    expect(sayHiToHeadphonedRoommate('hello')).toEqual("I can't hear you!");
-  })
+  if (string == string .toLowerCase()){
 
-  it('returns "YES INDEED!" if `string` is uppercase', function() {
-    expect(sayHiToHeadphonedRoommate('HELLO')).toEqual("YES INDEED!");
-  })
+  return "I can\'t hear you!";
 
-  it('returns "I would love to!" if `string` is "Let\'s have dinner together!"`', function () {
-    expect(sayHiToHeadphonedRoommate("Let's have dinner together!")).toEqual(
-      "I would love to!"
-    );
-  });
-})
+  }else if (string == string .toUpperCase()) {
+      return "YES INDEED!";
+
+   } else (string == "Let's have dinner together!") 
+          return "I would love to!";
+  
+}
+      
